@@ -5,9 +5,9 @@
 //  Created by Upneet Bir on 12/5/21.
 //
 
-import SwiftUI
 import Firebase
 import FirebaseAuth
+import SwiftUI
 
 struct SignInView: View {
     @State var email = ""
@@ -25,7 +25,7 @@ struct SignInView: View {
     }
 
     func login() {
-        Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
+        Auth.auth().signIn(withEmail: email, password: password) { _, error in
             if error != nil {
                 print(error?.localizedDescription ?? "")
             } else {

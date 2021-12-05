@@ -5,9 +5,9 @@
 //  Created by Upneet Bir on 12/4/21.
 //
 
-import Foundation
-import FirebaseDatabase
 import Firebase
+import FirebaseDatabase
+import Foundation
 
 struct ImageEntry: Codable, Identifiable {
     var id: String?
@@ -18,7 +18,7 @@ struct ImageEntry: Codable, Identifiable {
     var dict: NSDictionary? {
         if let idStr = id {
             let d = NSDictionary(dictionary: [
-                "id": idStr, "caption": caption, "upvotes": upvotes, "image_path": image_path
+                "id": idStr, "caption": caption, "upvotes": upvotes, "image_path": image_path,
             ])
             return d
         }
@@ -66,11 +66,8 @@ class CampImage {
                let id = de.id { self.image_entries[id] = de }
         }
     }
-    
-    
-    
+
     func addEntry(entry: inout MessageEntry) {
-        
         print("Entry Information: ", Date())
         let rootRef = Database.database().reference()
 //        let childRef = rootRef.childByAutoId()
@@ -93,5 +90,4 @@ class CampImage {
 
         rootRef.child(id).removeValue()
     }
-    
 }

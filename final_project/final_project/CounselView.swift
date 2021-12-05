@@ -5,11 +5,11 @@
 ////  Created by Upneet Bir on 11/29/21.
 ////
 //
-//import CoreData
-//import FirebaseDatabase
-//import SwiftUI
+// import CoreData
+// import FirebaseDatabase
+// import SwiftUI
 //
-//struct CounselView: View {
+// struct CounselView: View {
 //    @Environment(\.managedObjectContext) private var viewContext
 //
 //    @FetchRequest(
@@ -74,10 +74,10 @@
 //            }
 //        }
 //    }
-//}
+// }
 //
-//struct CounselView_Previews: PreviewProvider {
+// struct CounselView_Previews: PreviewProvider {
 //    static var previews: some View {
 //        CounselView()
 //    }
-//}
+// }

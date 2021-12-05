@@ -7,15 +7,13 @@
 
 import Foundation
 
-
-
 struct Schedule: Codable {
     var day_of_week: String
-    var schedule_of_day: Dictionary<String, String>
+    var schedule_of_day: [String: String]
     var start_date: String
     var end_date: String
     var timezone: String
-    
+
     init() {
         load("schedule.json")
         day_of_week = ""
@@ -30,13 +28,14 @@ func load(_ name: String) -> Data? {
     do {
         if let bundlePath = Bundle.main.path(forResource: name,
                                              ofType: "json"),
-            let jsonData = try String(contentsOfFile: bundlePath).data(using: .utf8) {
+            let jsonData = try String(contentsOfFile: bundlePath).data(using: .utf8)
+        {
             return jsonData
         }
     } catch {
         print(error)
     }
-        
+
     return nil
 
 //    do {

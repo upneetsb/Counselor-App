@@ -19,7 +19,7 @@ struct CamperEntry: Codable, Identifiable {
     var dict: NSDictionary? {
         if let idStr = id {
             let d = NSDictionary(dictionary: [
-                "id": idStr, "name": name, "phone": phone, "allergies": allergies, "parent_contact": parent_contact, "notes": notes, "strikes": strikes
+                "id": idStr, "name": name, "phone": phone, "allergies": allergies, "parent_contact": parent_contact, "notes": notes, "strikes": strikes,
             ])
             return d
         }
@@ -120,13 +120,12 @@ class Camper: ObservableObject {
 
         rootRef.child(id).removeValue()
     }
-    
 
     func updateStrikes(entry: CamperEntry) {
         let newStrikes = entry.strikes + 1
         let rootRef = Database.database().reference()
         // id: d["id"] as? String, name: name, phone: phone, allergies: allergies, parent_contact: parent_contact, notes: notes, strikes: strikes
-        rootRef.child("Camper Data").child(entry.id!).setValue(["id": entry.id!, "name": entry.name, "phone": entry.phone, "allergies" : entry.allergies, "parent_contact": entry.parent_contact, "notes": entry.notes, "strikes": newStrikes ])
+        rootRef.child("Camper Data").child(entry.id!).setValue(["id": entry.id!, "name": entry.name, "phone": entry.phone, "allergies": entry.allergies, "parent_contact": entry.parent_contact, "notes": entry.notes, "strikes": newStrikes])
         print("updated entry in db")
     }
 }

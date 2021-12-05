@@ -96,14 +96,14 @@ struct CamperPreview: View {
 struct CamperEntryView: View {
     @EnvironmentObject var camper: Camper
     var entry: CamperEntry
-    
+
     private func incrementStrikes() {
         print("Selected this camper: " + entry.name)
-        
     }
+
     var body: some View {
         VStack {
-            Form{
+            Form {
                 Image(systemName: "person.fill")
                     .clipShape(Circle())
                     .shadow(radius: 10)
@@ -113,21 +113,19 @@ struct CamperEntryView: View {
                 Text("Private Notes: " + (entry.notes ?? ""))
                 if entry.strikes > 5 {
                     Text("Camper has " + String(entry.strikes) + " strikes!").font(.headline).bold().foregroundColor(.red)
-                }
-                else if entry.strikes == 0 {
+                } else if entry.strikes == 0 {
                     Text("Camper has " + String(entry.strikes) + " strikes!").foregroundColor(.green)
-                }
-                else {
+                } else {
                     Text("Camper has " + String(entry.strikes) + " strikes!").foregroundColor(.yellow)
                 }
             }
-            
+
             Button(action: {
                 camper.updateStrikes(entry: self.entry)
             }) {
                 Text("Give Strike")
             }
-            
+
 //            HStack {
 //                Text("phone:\t").bold()
 //                Text(entry.phone)
@@ -164,6 +162,7 @@ struct PopupView: View {
         }
     }
 }
+
 struct CamperView: View {
     @EnvironmentObject var camper: Camper
     @State var adding = false

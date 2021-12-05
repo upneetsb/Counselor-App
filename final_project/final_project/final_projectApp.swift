@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-import Firebase
 import CoreLocation
+import Firebase
 import UIKit
 
 @main
@@ -25,10 +25,10 @@ struct final_projectApp: App {
     var body: some Scene {
         WindowGroup {
             TabView(selection: $tabS) {
-                VStack{
-                TaskView()
+                VStack {
+                    TaskView()
                         .environment(\.managedObjectContext, persistenceController.container.viewContext)
-                Spacer()
+                    Spacer()
 //                MapView().environment(\.managedObjectContext, persistenceController.container.viewContext).environmentObject(lm)
                 }.tabItem {
                     Label("Home", systemImage: "house")

@@ -8,15 +8,14 @@ import CoreData
 import CoreLocation
 import Firebase
 import FirebaseDatabase
-import SwiftUI
 import MapKit
-
+import SwiftUI
 
 extension CLLocationCoordinate2D: Identifiable {
-    public var id: String { "\(latitude), \(longitude)"}
+    public var id: String { "\(latitude), \(longitude)" }
 }
+
 struct MapView: View {
-    
     @Environment(\.managedObjectContext) private var viewContext
     @EnvironmentObject var lm: Locationer
     @State var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 38, longitude: -76), span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))

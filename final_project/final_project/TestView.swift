@@ -5,9 +5,9 @@
 //  Created by Upneet Bir on 11/30/21.
 //
 
+import FirebaseDatabase
 import SwiftUI
 import UIKit
-import FirebaseDatabase
 
 struct TestView: View {
     @State var showAction: Bool = false
@@ -56,15 +56,14 @@ struct TestView: View {
                         self.showAction = true
                     }
             }
-            
+
             Button(action: {
                 print("Pressed")
                 ImagePicker(isShown: self.$showImagePicker, uiImage: self.$uiImage)
-                
-                
+
 //                var de = MessageEntry(id: nil, message: self.message, subject: self.subject)
 //                messageObj.addEntry(entry: &de)
-////                adding = false
+                ////                adding = false
 //                self.showSheetView.toggle()
 
             }) {
@@ -82,7 +81,6 @@ struct TestView: View {
         .actionSheet(isPresented: $showAction) {
             sheet
         }
-        
     }
 }
 
@@ -105,10 +103,9 @@ struct ImagePicker: UIViewControllerRepresentable {
         {
             let imagePicked = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
             print(imagePicked)
-            
+
             uiImage = imagePicked
             isShown = false
-            
         }
 
         func imagePickerControllerDidCancel(_: UIImagePickerController) {
@@ -128,15 +125,14 @@ struct ImagePicker: UIViewControllerRepresentable {
 
     func updateUIViewController(_: UIImagePickerController,
                                 context _: UIViewControllerRepresentableContext<ImagePicker>) {}
-    
-    
+
     func persistImageToStorage() {
         let filename = UUID().uuidString
-        
+
         let rootRef = Database.database().reference()
-        guard let imageData = self.uiImage?.jpegData(compressionQuality: 0.5) else { return }
+        guard let imageData = uiImage?.jpegData(compressionQuality: 0.5) else { return }
         rootRef.setValue(imageData)
-        
+
         print("added image.")
 //        (imageData, metadata: nil) { metadata, err in
 //            if let err = err {

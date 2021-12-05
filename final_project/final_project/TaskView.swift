@@ -5,10 +5,10 @@
 //  Created by Upneet Bir on 12/5/21.
 //
 
-import SwiftUI
+import CoreData
 import Firebase
 import FirebaseAuth
-import CoreData
+import SwiftUI
 
 struct TaskRow: View {
     var task: ToDoTasks
@@ -17,17 +17,20 @@ struct TaskRow: View {
         Text(task.task_title ?? "No name given")
     }
 }
+
 struct DetailView: View {
     @State var item: ToDoTasks
 //    @State var region: MKCoordinateRegion
     var body: some View {
-        
-        VStack{
-            Text("Task Title: \(item.task_title!)")
-            Text("Task Description: \(item.task_name ?? "" )")
+        VStack {
+            Form {
+                Text("Task Title: \(item.task_title!)")
+                Text("Task Description: \(item.task_name ?? "")")
+            }
         }
     }
 }
+
 struct TaskView: View {
 //    @Environment(\.managedObjectContext) var context
     @Environment(\.managedObjectContext) private var viewContext
@@ -35,25 +38,24 @@ struct TaskView: View {
         sortDescriptors: [NSSortDescriptor(keyPath: \ToDoTasks.timestamp, ascending: true)],
         animation: .default
     )
-    
+
     private var items: FetchedResults<ToDoTasks>
-    
+
     @State private var taskName: String = ""
     @State private var task: String = ""
-    
+
     var body: some View {
         VStack {
-            HStack{
+            HStack {
                 TextField("Task Name", text: $taskName)
                 TextField("Task Description", text: $task)
                 Button(action: {
                     self.addTask()
-                }){
+                }) {
                     Text("Add Task")
                 }
-            }.padding(.all)
-            
-            
+            }.padding(50)
+
             NavigationView {
                 List {
                     ForEach(items) { item in
@@ -63,7 +65,7 @@ struct TaskView: View {
                     }.onDelete(perform: deleteItems)
                 }
             }
-            
+
 //            List {
 //                ForEach(items){ task in
 //                    Button(action: {
@@ -75,21 +77,21 @@ struct TaskView: View {
 //            }
         }
     }
-    
+
     func addTask() {
         let newTask = ToDoTasks(context: viewContext)
         newTask.timestamp = Date()
         newTask.isDone = false
         newTask.task_title = taskName
         newTask.task_name = task
-        
+
         do {
             try viewContext.save()
         } catch {
             print(error)
         }
     }
-    
+
     private func deleteItems(offsets: IndexSet) {
         withAnimation {
             offsets.map { items[$0] }.forEach(viewContext.delete)
@@ -106,15 +108,14 @@ struct TaskView: View {
     }
 }
 
-
-//struct TaskView: View {
+// struct TaskView: View {
 //    @Environment(\.managedObjectContext) var context
 //
 //    var body: some View {
 //        Text("Assigned Tasks")
 //        Text("My Personal Tasks")
 //    }
-//}
+// }
 
 struct TaskView_Previews: PreviewProvider {
     static var previews: some View {

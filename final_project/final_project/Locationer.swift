@@ -5,11 +5,10 @@
 //  Created by Upneet Bir on 12/1/21.
 //
 
-import Foundation
 import CoreLocation
+import Foundation
 
 class Locationer: NSObject, ObservableObject, CLLocationManagerDelegate {
-    
     var lm = CLLocationManager()
     @Published var location = CLLocationCoordinate2D(latitude: 38, longitude: -76)
 //    var l_values:[CLLocationCoordinate2D] = []
@@ -23,9 +22,8 @@ class Locationer: NSObject, ObservableObject, CLLocationManagerDelegate {
         lm.requestWhenInUseAuthorization()
         lm.startUpdatingLocation()
     }
-    
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
 
+    func locationManager(_: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let loc = locations.last {
             location = CLLocationCoordinate2D(latitude: loc.coordinate.latitude, longitude: loc.coordinate.longitude)
         }
