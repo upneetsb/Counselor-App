@@ -1,0 +1,66 @@
+{
+    "sunday": [
+        {"uid":"arrive", "location": "Main Hall", "start_time": "19:00", "end_time": "20:00"},
+        {"uid":"bed_time", "location": "Camper Halls", "start_time": "20:00", "end_time": "23:59"}
+    ],
+    "monday": [
+      {"uid":"intros", "location": "Main Hall", "start_time": "09:00", "end_time": "10:00"},
+      {"uid":"breakfast", "location": "Main Hall", "start_time": "10:30", "end_time": "11:00"},
+      {"uid":"class1", "location": "Hall A", "start_time": "11:15", "end_time": "12:30"},
+      {"uid":"class2", "location": "Hall B", "start_time": "12:45", "end_time": "14:30"},
+      {"uid":"lunch_time", "location": "Main Hall", "start_time": "14:30", "end_time": "15:15"},
+      {"uid":"class3", "location": "Hall C", "start_time": "15:30", "end_time": "16:45"},
+      {"uid":"freetime", "location": "Field B", "start_time": "17:00", "end_time": "18:30"},
+      {"uid":"dinner_time", "location": "Main Hall", "start_time": "18:45", "end_time": "19:45"},
+      {"uid":"bed_time", "location": "Camper Halls", "start_time": "20:00", "end_time": "23:59"}
+    ],
+    "tuesday": [
+        {"uid":"intros", "location": "Main Hall", "start_time": "09:00", "end_time": "10:00"},
+        {"uid":"breakfast", "location": "Main Hall", "start_time": "10:30", "end_time": "11:00"},
+        {"uid":"class1", "location": "Hall A", "start_time": "11:15", "end_time": "12:30"},
+        {"uid":"class2", "location": "Hall B", "start_time": "12:45", "end_time": "14:30"},
+        {"uid":"lunch_time", "location": "Main Hall", "start_time": "14:30", "end_time": "15:15"},
+        {"uid":"class3", "location": "Hall C", "start_time": "15:30", "end_time": "16:45"},
+        {"uid":"freetime", "location": "Field B", "start_time": "17:00", "end_time": "18:30"},
+        {"uid":"dinner_time", "location": "Main Hall", "start_time": "18:45", "end_time": "19:45"},
+        {"uid":"bed_time", "location": "Camper Halls", "start_time": "20:00", "end_time": "23:59"}
+    ],
+    "wednesday": [
+        {"uid":"intros", "location": "Main Hall", "start_time": "09:00", "end_time": "10:00"},
+        {"uid":"breakfast", "location": "Main Hall", "start_time": "10:30", "end_time": "11:00"},
+        {"uid":"class1", "location": "Hall A", "start_time": "11:15", "end_time": "12:30"},
+        {"uid":"class2", "location": "Hall B", "start_time": "12:45", "end_time": "14:30"},
+        {"uid":"lunch_time", "location": "Main Hall", "start_time": "14:30", "end_time": "15:15"},
+        {"uid":"class3", "location": "Hall C", "start_time": "15:30", "end_time": "16:45"},
+        {"uid":"freetime", "location": "Field B", "start_time": "17:00", "end_time": "18:30"},
+        {"uid":"dinner_time", "location": "Main Hall", "start_time": "18:45", "end_time": "19:45"},
+        {"uid":"bed_time", "location": "Camper Halls", "start_time": "20:00", "end_time": "23:59"}
+    ],
+    "thursday": [
+        {"uid":"intros", "location": "Main Hall", "start_time": "09:00", "end_time": "10:00"},
+        {"uid":"breakfast", "location": "Main Hall", "start_time": "10:30", "end_time": "11:00"},
+        {"uid":"class1", "location": "Hall A", "start_time": "11:15", "end_time": "12:30"},
+        {"uid":"class2", "location": "Hall B", "start_time": "12:45", "end_time": "14:30"},
+        {"uid":"lunch_time", "location": "Main Hall", "start_time": "14:30", "end_time": "15:15"},
+        {"uid":"class3", "location": "Hall C", "start_time": "15:30", "end_time": "16:45"},
+        {"uid":"freetime", "location": "Field B", "start_time": "17:00", "end_time": "18:30"},
+        {"uid":"dinner_time", "location": "Main Hall", "start_time": "18:45", "end_time": "19:45"},
+        {"uid":"bed_time", "location": "Camper Halls", "start_time": "20:00", "end_time": "23:59"}
+    ],
+    "friday": [
+        {"uid":"intros", "location": "Main Hall", "start_time": "09:00", "end_time": "10:00"},
+        {"uid":"breakfast", "location": "Main Hall", "start_time": "10:30", "end_time": "11:00"},
+        {"uid":"class1", "location": "Hall A", "start_time": "11:15", "end_time": "12:30"},
+        {"uid":"class2", "location": "Hall B", "start_time": "12:45", "end_time": "14:30"},
+        {"uid":"lunch_time", "location": "Main Hall", "start_time": "14:30", "end_time": "15:15"},
+        {"uid":"class3", "location": "Hall C", "start_time": "15:30", "end_time": "16:45"},
+        {"uid":"freetime", "location": "Field B", "start_time": "17:00", "end_time": "18:30"},
+        {"uid":"dinner_time", "location": "Main Hall", "start_time": "18:45", "end_time": "19:45"},
+        {"uid":"bed_time", "location": "Camper Halls", "start_time": "20:00", "end_time": "23:59"}
+    ],
+    "saturday": [
+        {"uid":"intros", "location": "Main Hall", "start_time": "09:00", "end_time": "10:00"},
+        {"uid":"breakfast", "location": "Main Hall", "start_time": "10:30", "end_time": "11:00"},
+        {"uid":"leaves", "location": "Main Hall", "start_time": "11:15", "end_time": "12:30"}
+    ],
+}
